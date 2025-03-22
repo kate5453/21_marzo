@@ -5,20 +5,29 @@
 //     }, 700);
 // });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const button = document.createElement("button");
-    button.innerText = "Iniciar Música";
-    button.style.display = "none"; // Oculta el botón
+// document.addEventListener("DOMContentLoaded", () => {
+//     const button = document.createElement("button");
+//     button.innerText = "Iniciar Música";
+//     button.style.display = "none"; // Oculta el botón
 
-    document.body.appendChild(button);
+//     document.body.appendChild(button);
 
+//     setTimeout(() => {
+//         button.click(); // Simula el click para permitir el autoplay
+
+//         const audio = new Audio("floresamarillas.mp3");
+//         audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+//     }, 700);
+// });
+
+document.addEventListener("click", () => {
+    // const audio = new Audio("floresamarillas.mp3");
+    // audio.play().catch(error => console.log("Autoplay bloqueado:", error));
     setTimeout(() => {
-        button.click(); // Simula el click para permitir el autoplay
-
         const audio = new Audio("floresamarillas.mp3");
         audio.play().catch(error => console.log("Autoplay bloqueado:", error));
     }, 700);
-});
+}, { once: true }); // Solo se ejecuta una vez
 
 
 function createFlower() {
