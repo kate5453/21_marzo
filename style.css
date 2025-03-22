@@ -29,6 +29,36 @@ body {
 
     padding: 4em 1.5em;
 }
+
+
+.fade-in {
+    animation: fadeInUsual 2s ease-in-out forwards;
+}
+
+@keyframes fadeInUsual {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.buttons, .flowers, p {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+    animation: fadeInUsual 2s ease-in-out forwards;
+}
+
+#start-btn {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: yellow;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    animation: fadeInUsual 1.5s ease-in-out forwards;  /* Animación */
+}
 h1 {
     font-size: 2rem;
     text-shadow: 0 0 10px yellow, 0 0 20px orange;
@@ -280,7 +310,7 @@ h1 {
     display: flex;
     gap: 1px;
 }
-button {
+.buttons > button {
     opacity: 0;  /* Oculta los botones al inicio */
     font-size: 1.2em;
     padding: 10px 20px;

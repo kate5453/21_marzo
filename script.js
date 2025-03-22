@@ -1,34 +1,47 @@
-// document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("click", () => {
+//     // const audio = new Audio("floresamarillas.mp3");
+//     // audio.play().catch(error => console.log("Autoplay bloqueado:", error));
 //     setTimeout(() => {
 //         const audio = new Audio("floresamarillas.mp3");
 //         audio.play().catch(error => console.log("Autoplay bloqueado:", error));
 //     }, 700);
-// });
+// }, { once: true }); // Solo se ejecuta una vez
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const button = document.createElement("button");
-//     button.innerText = "Iniciar Música";
-//     button.style.display = "none"; // Oculta el botón
+document.getElementById("start-btn").addEventListener("click", () => {
+    // Ocultar el botón de inicio
+    document.getElementById("start-btn").style.display = "none";
 
-//     document.body.appendChild(button);
+    // Mostrar el contenido con animaciones
+    let content = document.getElementById("content");
+    content.classList.remove("hidden");
+    content.classList.add("fade-in");
 
-//     setTimeout(() => {
-//         button.click(); // Simula el click para permitir el autoplay
+    // Hacer visibles los elementos con la clase .show
+    document.querySelectorAll(".buttons, .flowers, p").forEach(el => {
+        el.classList.add("show");
+    });
 
-//         const audio = new Audio("floresamarillas.mp3");
-//         audio.play().catch(error => console.log("Autoplay bloqueado:", error));
-//     }, 700);
-// });
+    // Cambia el intervalo de tiempo para controlar la aparición de las flores cada 3 segundos
+    setInterval(createFlower,1000); // Nuevas flores cada 3 segundos
 
-document.addEventListener("click", () => {
-    // const audio = new Audio("floresamarillas.mp3");
-    // audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+    // Reproducir la música
     setTimeout(() => {
         const audio = new Audio("floresamarillas.mp3");
         audio.play().catch(error => console.log("Autoplay bloqueado:", error));
-    }, 700);
-}, { once: true }); // Solo se ejecuta una vez
+    }, 700); // Pequeño retraso para asegurar que se active después del clic
+});
 
+function showMessage(type) {
+    let message = document.getElementById("message");
+    message.style.fontSize = "20px";
+    if (type === "like") {
+        message.innerHTML = "¡Gracias! 🌻✨";
+        window.location.href = "https://wa.me/924200709?text=¡Gracias!%20🌻✨";
+    } else {
+        message.innerHTML = "Activa la racha 🥺";
+    }
+    message.classList.remove("hidden");
+}
 
 function createFlower() {
     const flowerContainer = document.querySelectorAll(".flower-container");
@@ -64,5 +77,3 @@ function createFlower() {
     });
 }
 
-// Cambia el intervalo de tiempo para controlar la aparición de las flores cada 3 segundos
-setInterval(createFlower,1000); // Nuevas flores cada 3 segundos

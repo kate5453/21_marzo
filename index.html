@@ -11,6 +11,12 @@
 </head>
 <body>
     <h1>PARA MI MEJOR AMIGA</h1>
+
+    <!-- Botón para iniciar -->
+    <button id="start-btn">Dar click</button>
+
+    <!-- Contenido oculto hasta que el usuario haga clic -->
+    <div id="content" class="hidden">
     <p>
         <span class="typed-text line1">Hoy 22 de marzo, llego tarde 💛</span> <br> 
         <span class="typed-text line2">Aunque estás lejos, aqui te envio 🌼✨</span>
@@ -44,19 +50,8 @@
     
     <p id="message" class="hidden"></p>
 
-    <script src="script.js"></script>
+    </div>
 
-    <script>
-        function showMessage(type) {
-            let message = document.getElementById("message");
-            message.style.fontSize = "20px" ;           if (type === "like") {
-                message.innerHTML = "¡Gracias! 🌻✨";
-                window.location.href = "https://wa.me/924200709?text=¡Gracias!%20🌻✨";
-            } else {
-                message.innerHTML = "Activa la racha 🥺";
-            }
-            message.classList.remove("hidden");
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
