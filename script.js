@@ -32,7 +32,7 @@ document.getElementById("start-btn").addEventListener("click", () => {
     setTimeout(() => {
         audio = new Audio("floresamarillas.mp3");
         audio.play().catch(error => console.log("Autoplay bloqueado:", error));
-    }, 500); // Pequeño retraso para asegurar que se active después del clic
+    }, 200); // Pequeño retraso para asegurar que se active después del clic
 });
 
 function showMessage(type) {
