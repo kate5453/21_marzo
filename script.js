@@ -23,7 +23,10 @@ document.getElementById("start-btn").addEventListener("click", () => {
     });
 
     // Cambia el intervalo de tiempo para controlar la aparición de las flores cada 3 segundos
-    setInterval(createFlower,1000); // Nuevas flores cada 3 segundos
+    // setInterval(createFlower,1000); // Nuevas flores cada 3 segundos
+    setTimeout(() =>{
+        createFlower();
+    },700);
 
     // Reproducir la música
     setTimeout(() => {
