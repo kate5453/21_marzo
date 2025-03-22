@@ -6,6 +6,7 @@
 //         audio.play().catch(error => console.log("Autoplay bloqueado:", error));
 //     }, 700);
 // }, { once: true }); // Solo se ejecuta una vez
+let audio;
 
 document.getElementById("start-btn").addEventListener("click", () => {
     // Ocultar el botón de inicio
@@ -26,7 +27,7 @@ document.getElementById("start-btn").addEventListener("click", () => {
 
     // Reproducir la música
     setTimeout(() => {
-        const audio = new Audio("floresamarillas.mp3");
+        audio = new Audio("floresamarillas.mp3");
         audio.play().catch(error => console.log("Autoplay bloqueado:", error));
     }, 700); // Pequeño retraso para asegurar que se active después del clic
 });
@@ -35,6 +36,12 @@ function showMessage(type) {
     let message = document.getElementById("message");
     message.style.fontSize = "20px";
     if (type === "like") {
+        // Detener la música antes de redirigir
+        if (audio) {
+            audio.pause();
+            audio.currentTime = 0; // Reinicia el audio
+        }
+        
         message.innerHTML = "¡Gracias! 🌻✨";
         window.location.href = "https://wa.me/924200709?text=¡Gracias!%20🌻✨";
     } else {
