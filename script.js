@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        const audio = new Audio("floresamarillas.mp3");
+        audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+    }, 700);
+});
+
 function createFlower() {
     const flowerContainer = document.querySelectorAll(".flower-container");
 

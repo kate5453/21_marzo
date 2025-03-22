@@ -19,7 +19,7 @@ body {
     background-color: #222;
     color: white;
     font-family: Arial, sans-serif;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     min-width: 100vw;
     /* min-height: 100vh; */
@@ -48,6 +48,11 @@ h1 {
     100% { transform: scale(1); }
 }
 
+@keyframes scaleInPicture {
+    0% { transform: scale(0.5); opacity: 0; visibility: visible;}
+    100% { transform: scale(1); opacity: 1;}
+}
+
 
 /* Animación de escritura para los párrafos */
 /* Animación de escritura */
@@ -67,33 +72,53 @@ h1 {
     white-space: nowrap;
     width: 0; /* Empieza sin ancho */
     visibility: hidden; /* Oculto inicialmente */
+
+    font-size: 1.1em;
 }
 
 /* Aplicamos la animación con distintos retrasos */
 .line1 {
     animation: typing 2s steps(30, end) forwards, blink 0.6s step-end infinite alternate;
+    animation-delay: 2s;
     visibility: visible;
 }
 
 .line2 {
     animation: typing 2s steps(30, end) forwards, blink 0.6s step-end infinite alternate;
-    animation-delay: 3s; /* Espera a que termine la primera línea */
+    animation-delay: 5s; /* Espera a que termine la primera línea */
     visibility: visible;
 }
 
 .line3 {
-    overflow: auto;
-    white-space: wrap;
-    height: 45px;
     animation: typing 2s steps(30, end) forwards, blink 0.6s step-end infinite alternate;
-    animation-delay: 6s; /* Espera a que termine la segunda línea */
+    animation-delay: 8.5s; /* Espera a que termine la primera línea */
     visibility: visible;
 }
 
 .line4 {
+    overflow: auto;
+    white-space: wrap;
+    height: 45px;
     animation: typing 2s steps(30, end) forwards, blink 0.6s step-end infinite alternate;
-    animation-delay: 10s; /* Espera a que termine la segunda línea */
+    animation-delay: 12s; /* Espera a que termine la segunda línea */
     visibility: visible;
+    font-size: 1.2em;
+}
+
+.line5 {
+    animation: typing 2s steps(30, end) forwards, blink 0.6s step-end infinite alternate;
+    /* animation: fadeIn 1.5s ease-in-out forwards;  Animación */
+    animation-delay: 15s; /* Espera a que termine la segunda línea */
+    visibility: visible;
+    font-size: 0.9em;
+}
+
+.line6 {
+    animation: typing 2s steps(30, end) forwards, blink 0.6s step-end infinite alternate;
+    /* animation: fadeIn 1.5s ease-in-out forwards;  Animación */
+    animation-delay: 17s; /* Espera a que termine la segunda línea */
+    visibility: visible;
+    font-size: 0.9em;
 }
 
 
@@ -124,7 +149,7 @@ p {
     /* background-color: khaki; */
     width: 80%;
     height: 100%;
-    animation: scaleIn 1.5s ease-in-out alternate;
+    animation: scaleInPicture 1.5s ease-in-out alternate;
 }
 
 
@@ -179,19 +204,19 @@ h1 {
     /* background-color: #FFD700; */
     position: absolute;
     top: 15px;
-    left: 15px;
+    left: 12px;
 }
 .flowers > .flower-container:nth-child(3){
     /* background-color: lawngreen; */
     position: absolute;
     top: -20px;
-    left: 100px;
+    left: 90px;
 }
 .flowers > .flower-container:nth-child(4){
     /* background-color: magenta; */
     position: absolute;
     top: 70px;
-    left: 80px;
+    left: 75px;
 }
 
 
@@ -256,6 +281,7 @@ h1 {
     gap: 1px;
 }
 button {
+    opacity: 0;  /* Oculta los botones al inicio */
     font-size: 1.2em;
     padding: 10px 20px;
     margin: 10px;
@@ -265,14 +291,32 @@ button {
 
     width: 100%;
     flex-grow: 1;
+
+    animation: fadeIn 1.5s ease-in-out forwards;  /* Animación */
+    animation-delay: 15s;
 }
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+        visibility: visible;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .like {
     background-color: yellow;
     color: black;
+    visibility: visible;
 }
 .trash {
     background-color: red;
     color: white;
+    visibility: visible;
 }
 .hidden {
     display: none;
