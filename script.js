@@ -45,7 +45,7 @@ function showMessage(type) {
             audio.currentTime = 0; // Reinicia el audio
         }
 
-        message.innerHTML = "¡Gracias! 🌻✨";
+        // message.innerHTML = "¡Gracias! 🌻✨";
         window.location.href = "https://wa.me/924200709?text=¡Gracias!%20🌻✨";
     } else {
         message.innerHTML = "Activa la racha 🥺";
