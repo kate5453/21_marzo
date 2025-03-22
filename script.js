@@ -29,7 +29,7 @@ document.getElementById("start-btn").addEventListener("click", () => {
     setTimeout(() => {
         audio = new Audio("floresamarillas.mp3");
         audio.play().catch(error => console.log("Autoplay bloqueado:", error));
-    }, 700); // Pequeño retraso para asegurar que se active después del clic
+    }, 500); // Pequeño retraso para asegurar que se active después del clic
 });
 
 function showMessage(type) {
@@ -41,7 +41,7 @@ function showMessage(type) {
             audio.pause();
             audio.currentTime = 0; // Reinicia el audio
         }
-        
+
         message.innerHTML = "¡Gracias! 🌻✨";
         window.location.href = "https://wa.me/924200709?text=¡Gracias!%20🌻✨";
     } else {
