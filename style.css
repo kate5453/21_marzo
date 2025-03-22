@@ -132,7 +132,7 @@ h1 {
     animation: typing 2s steps(30, end) forwards, blink 0.6s step-end infinite alternate;
     animation-delay: 12s; /* Espera a que termine la segunda línea */
     visibility: visible;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .line5 {
