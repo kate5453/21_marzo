@@ -1,0 +1,266 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+}*/
+body {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+
+    min-width: 100vw;
+    /* min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    padding: 4em 1.5em;
+}
+h1 {
+    font-size: 2rem;
+    text-shadow: 0 0 10px yellow, 0 0 20px orange;
+
+    margin: 0 auto;
+    width: 75%;
+    /* background-color: aqua; */
+
+    animation: scaleIn 1.5s ease-in-out infinite alternate;
+}
+
+
+/* Animación para el h1 */
+@keyframes scaleIn {
+    0% { transform: scale(0.75); }
+    100% { transform: scale(1); }
+}
+
+
+/* Animación de escritura para los párrafos */
+/* Animación de escritura */
+@keyframes typing {
+    from { width: 0; opacity: 0; visibility: visible;}
+    to { width: 100%; opacity: 1;}
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Estilo base para los textos animados */
+.typed-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0; /* Empieza sin ancho */
+    visibility: hidden; /* Oculto inicialmente */
+}
+
+/* Aplicamos la animación con distintos retrasos */
+.line1 {
+    animation: typing 2s steps(30, end) forwards, blink 0.6s step-end infinite alternate;
+    visibility: visible;
+}
+
+.line2 {
+    animation: typing 2s steps(30, end) forwards, blink 0.6s step-end infinite alternate;
+    animation-delay: 3s; /* Espera a que termine la primera línea */
+    visibility: visible;
+}
+
+.line3 {
+    overflow: auto;
+    white-space: wrap;
+    height: 45px;
+    animation: typing 2s steps(30, end) forwards, blink 0.6s step-end infinite alternate;
+    animation-delay: 6s; /* Espera a que termine la segunda línea */
+    visibility: visible;
+}
+
+.line4 {
+    animation: typing 2s steps(30, end) forwards, blink 0.6s step-end infinite alternate;
+    animation-delay: 10s; /* Espera a que termine la segunda línea */
+    visibility: visible;
+}
+
+
+
+p {
+    width: 100%;
+    /* background-color: green; */
+    font-size: 1rem;
+    opacity: 1;
+}
+
+
+
+.picture{
+    width: 100%;
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: right;
+    height: 300px;
+
+    /* position: relative; */
+    margin-top: 30px;
+}
+
+.picture > img{
+    /* background-color: khaki; */
+    width: 80%;
+    height: 100%;
+    animation: scaleIn 1.5s ease-in-out alternate;
+}
+
+
+.container {
+    text-align: center;
+}
+/* 
+h1 {
+    font-size: 36px;
+    color: #8B4513;
+    margin-top: 20px;
+    z-index: 1;
+} */
+
+
+.flowers {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+
+    position: relative;
+    /* background-color: aqua; */
+}
+/* .flower {
+    width: 50px;
+    height: 50px;
+    background: yellow;
+    border-radius: 50%;
+    animation: bloom 2s infinite alternate;
+} */
+.flower-container {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    /* background: blue; */
+    /* border-radius: 50%; */
+    animation: bloom 2s infinite alternate;
+}
+
+@keyframes bloom {
+    0% { transform: scale(0.75); opacity: 0.85; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+.flowers > .flower-container:nth-child(2){
+    /* background-color: #FFD700; */
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.flowers > .flower-container:nth-child(3){
+    /* background-color: lawngreen; */
+    position: absolute;
+    top: -20px;
+    left: 100px;
+}
+.flowers > .flower-container:nth-child(4){
+    /* background-color: magenta; */
+    position: absolute;
+    top: 70px;
+    left: 80px;
+}
+
+
+.flor {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    position: relative;
+}
+
+.petal {
+    width: 25px;
+    height: 50px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 100%;
+}
+
+.p1 { transform: translate(-50%, -50%) rotate(0deg); }
+.p2 { transform: translate(-50%, -50%) rotate(36deg); }
+.p3 { transform: translate(-50%, -50%) rotate(72deg); }
+.p4 { transform: translate(-50%, -50%) rotate(108deg); }
+.p5 { transform: translate(-50%, -50%) rotate(144deg); }
+.p6 { transform: translate(-50%, -50%) rotate(180deg); }
+.p7 { transform: translate(-50%, -50%) rotate(216deg); }
+.p8 { transform: translate(-50%, -50%) rotate(252deg); }
+.p9 { transform: translate(-50%, -50%) rotate(288deg); }
+.p10 { transform: translate(-50%, -50%) rotate(324deg); }
+
+/* Agrega las siguientes clases para las animaciones */
+@keyframes fadeInPetal {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutPetal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.petal {
+    /* Agrega una animación de entrada a los pétalos */
+    animation: fadeInPetal 0.5s ease-in-out both;
+}
+
+
+.buttons {
+    margin-top: 30px;
+}
+button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.like {
+    background-color: yellow;
+    color: black;
+}
+.trash {
+    background-color: red;
+    color: white;
+}
+.hidden {
+    display: none;
+}
+
+
